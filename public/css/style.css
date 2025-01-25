@@ -68,18 +68,19 @@ nav {
     margin-bottom: 3rem;
 }
 
-.title {
+.hero-header .title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: var(--accent-purple);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: 500;
 }
 
-.subtitle {
-    font-size: 1.2rem;
+.hero-header .subtitle {
+    font-size: 1.8rem;
     color: var(--gold);
     font-family: 'Cormorant Garamond', serif;
+    line-height: 1.4;
 }
 
 .video-container {
@@ -247,8 +248,12 @@ footer {
         padding: 1rem;
     }
 
-    .title {
-        font-size: 2.5rem;
+    .hero-header .title {
+        font-size: 3.5rem;
+    }
+
+    .hero-header .subtitle {
+        font-size: 1.4rem;
     }
 
     .golden-button {
