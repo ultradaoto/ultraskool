@@ -1,5 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!-- Essential Open Graph Tags -->
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:description" content="<%= description %>">
+    <meta property="og:image" content="<%= imageUrl %>">
+    <meta property="og:url" content="<%= currentUrl %>">
+    <meta property="og:type" content="website">
+
+    <!-- Additional recommended Open Graph Tags -->
+    <meta property="og:site_name" content="Vagus Skool">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Tags (Optional but recommended) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= title %>">
+    <meta name="twitter:description" content="<%= description %>">
+    <meta name="twitter:image" content="<%= imageUrl %>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 <%- include('partials/header') %>
 <body>
     <main>
