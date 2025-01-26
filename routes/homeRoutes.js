@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+// Redirect /live to home page
+router.get('/live', (req, res) => {
+    res.redirect('/');
+});
+
 router.get('/', (req, res) => {
     res.render('home', {
         title: "Ultra Skool - Ultra Breath Experience",
@@ -43,6 +48,16 @@ router.get('/join', (req, res) => {
         description: "Join the Ultra Skool for Live Ultrasound Stimulation Workshop. Experience live guidance and community practice in our interactive Zoom session.",
         imageUrl: "https://ultraskool.com/images/preview-image.jpg",
         currentUrl: "https://ultraskool.com/join"
+    });
+});
+
+// 404 page - This should be the last route
+router.use((req, res) => {
+    res.status(404).render('404', {
+        title: "404 - Page Not Found | Ultra Skool",
+        description: "The page you're looking for doesn't exist in our quantum realm.",
+        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
+        currentUrl: req.originalUrl
     });
 });
 
