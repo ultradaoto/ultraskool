@@ -3,46 +3,46 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     res.render('home', {
-        title: "Vagus Skool - Ultra Breath Experience",
-        description: "Discover the ancient wisdom of Ultra Breath and unlock the healing power of your vagus nerve through revolutionary techniques combining ultrasound-enhanced stimulation with ancient Tummo breathing practices.",
-        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
-        currentUrl: "https://vagusskool.com"
+        title: "Ultra Skool - Ultra Breath Experience",
+        description: "Discover the ancient wisdom of Ultra Breath and unlock the healing power of your Microtubules through revolutionary techniques combining ultrasound-enhanced stimulation with ancient Tummo breathing practices.",
+        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
+        currentUrl: "https://ultraskool.com"
     });
 });
 
 router.get('/about', (req, res) => {
     res.render('about', {
-        title: "About Vagus Skool - Our Mission & Vision",
+        title: "About Ultra Skool - Our Mission & Vision",
         description: "Learn how Vagus Skool is revolutionizing vagus nerve stimulation through accessible, clear, and effective methods. Join our community of practitioners and discover the healing power of VNS.",
-        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
-        currentUrl: "https://vagusskool.com/about"
+        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
+        currentUrl: "https://ultraskool.com/about"
     });
 });
 
 router.get('/testimonials', (req, res) => {
     res.render('testimonials', {
-        title: "Vagus Skool Success Stories - Transformative Experiences",
+        title: "Ultra Skool Success Stories - Transformative Experiences",
         description: "Read and watch real testimonials from people who have transformed their lives through Vagus Skool's revolutionary vagus nerve stimulation techniques and breathing practices.",
-        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
-        currentUrl: "https://vagusskool.com/testimonials"
+        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
+        currentUrl: "https://ultraskool.com/testimonials"
     });
 });
 
 router.get('/courses', (req, res) => {
     res.render('courses', {
-        title: "Vagus Skool Courses - Comprehensive VNS Learning Paths",
+        title: "Ultra Skool Courses - Comprehensive Learning Paths",
         description: "Explore our comprehensive course catalog covering everything from basic vagus nerve stimulation to advanced techniques in breathing, ultrasound therapy, and electrical stimulation.",
-        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
-        currentUrl: "https://vagusskool.com/courses"
+        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
+        currentUrl: "https://ultraskool.com/courses"
     });
 });
 
 router.get('/join', (req, res) => {
     res.render('join', {
-        title: "Vagus Nerve Live Workshop - Join Us Live!",
-        description: "Join the Vagus Skool for our First Ever Live Vagus Nerve Stimulation Workshop. Experience live guidance and community practice in our interactive Zoom session.",
-        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
-        currentUrl: "https://vagusskool.com/join"
+        title: "Ultra Microtubule Workshop - Join Us Live!",
+        description: "Join the Ultra Skool for Live Ultrasound Stimulation Workshop. Experience live guidance and community practice in our interactive Zoom session.",
+        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
+        currentUrl: "https://ultraskool.com/join"
     });
 });
 
