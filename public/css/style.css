@@ -13,48 +13,64 @@
 }
 
 body {
+    background-color: #0a0a0f;
+    color: #e0e0ff;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, var(--soft-white) 0%, #F0E6FF 100%);
-    color: var(--dark-text);
     line-height: 1.6;
     min-height: 100vh;
 }
 
 header {
-    padding: 1rem 0;
-    background-color: transparent;
+    padding: 1.5rem 0;
+    background: rgba(10, 10, 15, 0.95);
+    border-bottom: 1px solid rgba(147, 51, 234, 0.2);
 }
 
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 20px;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    color: var(--accent-purple);
+    color: #fff;
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2.2rem;
+    font-weight: 500;
     font-family: 'Cormorant Garamond', serif;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5),
+                 0 0 20px rgba(147, 51, 234, 0.3),
+                 0 0 30px rgba(147, 51, 234, 0.2);
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: #a855f7;
+    text-shadow: 0 0 15px rgba(147, 51, 234, 0.7),
+                 0 0 25px rgba(147, 51, 234, 0.5),
+                 0 0 35px rgba(147, 51, 234, 0.3);
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-links a {
-    color: var(--accent-purple);
+    color: #e0e0ff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+    color: #a855f7;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
 }
 
 .container {
@@ -68,19 +84,19 @@ nav {
     margin-bottom: 3rem;
 }
 
-.hero-header .title {
+.title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 4.5rem;
-    color: var(--accent-purple);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5),
+                 0 0 20px rgba(147, 51, 234, 0.3);
     margin-bottom: 1rem;
-    font-weight: 500;
 }
 
-.hero-header .subtitle {
-    font-size: 1.8rem;
-    color: var(--gold);
-    font-family: 'Cormorant Garamond', serif;
-    line-height: 1.4;
+.subtitle {
+    font-size: 1.5rem;
+    color: #a855f7;
+    letter-spacing: 2px;
 }
 
 .video-container {
@@ -128,52 +144,55 @@ nav {
 }
 
 .description {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    font-size: 1.1rem;
+    background: rgba(147, 51, 234, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(147, 51, 234, 0.2);
 }
 
 .benefits {
-    margin-top: 2rem;
-    display: grid;
-    gap: 1rem;
-    color: var(--accent-purple);
+    margin: 2rem 0;
+    font-size: 1.1rem;
 }
 
 .benefits p {
+    color: #e0e0ff;
     margin: 1rem 0;
-    color: var(--accent-purple);
+}
+
+.quantum-button {
+    background: linear-gradient(45deg, #4c1d95, #7e22ce);
+    color: white;
+    padding: 1.5rem 3rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.5),
+                0 0 30px rgba(147, 51, 234, 0.3);
+}
+
+.quantum-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(147, 51, 234, 0.7),
+                0 0 40px rgba(147, 51, 234, 0.4);
 }
 
 .countdown-container {
+    background: rgba(147, 51, 234, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
     text-align: center;
-    margin-bottom: 3rem;
 }
 
-#countdown {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-}
-
-.time-segment {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.time-segment span {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--accent-purple);
-}
-
-.time-segment .label {
+.quantum-note {
+    color: #a855f7;
     font-size: 0.9rem;
-    color: var(--dark-text);
-    opacity: 0.8;
+    margin-top: 1rem;
+    font-style: italic;
 }
 
 .cta-container {
@@ -235,12 +254,31 @@ nav {
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: linear-gradient(45deg, var(--accent-purple), #7A5F8D);
-    color: var(--soft-white);
-    position: relative;
-    width: 100%;
-    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(10, 10, 15, 0.95);
+    border-top: 1px solid rgba(147, 51, 234, 0.2);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5),
+                 0 0 20px rgba(147, 51, 234, 0.3);
+}
+
+.footer-copyright {
+    color: #a855f7;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -276,6 +314,18 @@ footer {
     .nav-links a {
         font-size: 0.9rem;
     }
+
+    footer {
+        padding: 1.5rem;
+    }
+
+    .footer-brand {
+        font-size: 1.5rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
 }
 
 .about-content {
@@ -286,24 +336,30 @@ footer {
 
 .about-text {
     margin-bottom: 3rem;
+    background: rgba(147, 51, 234, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(147, 51, 234, 0.2);
 }
 
 .about-text p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--dark-text);
+    color: #e0e0ff;
 }
 
-.testimonial-link {
-    color: var(--accent-purple);
+.quantum-link {
+    color: #a855f7;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
 }
 
-.testimonial-link:hover {
-    color: var(--gold);
+.quantum-link:hover {
+    color: #c084fc;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
     text-decoration: underline;
 }
 
@@ -317,9 +373,10 @@ footer {
 .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
-    color: var(--accent-purple);
+    color: #fff;
     text-align: center;
     margin: 3rem 0 2rem;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
 }
 
 .video-grid {
@@ -337,16 +394,18 @@ footer {
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(147, 51, 234, 0.1);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    border: 1px solid rgba(147, 51, 234, 0.2);
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(147, 51, 234, 0.3);
 }
 
 .avatar {
@@ -354,11 +413,12 @@ footer {
     height: 100px;
     border-radius: 50%;
     margin-bottom: 1.5rem;
-    border: 3px solid var(--accent-purple);
+    border: 3px solid #a855f7;
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
 }
 
 .testimonial-text {
-    color: var(--dark-text);
+    color: #e0e0ff;
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
@@ -366,10 +426,11 @@ footer {
 }
 
 .testimonial-author {
-    color: var(--accent-purple);
+    color: #a855f7;
     font-weight: 500;
     font-size: 1.2rem;
     font-family: 'Cormorant Garamond', serif;
+    text-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -399,19 +460,20 @@ footer {
 }
 
 .course-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(147, 51, 234, 0.1);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Ensure all cards are the same height */
+    height: 100%;
+    border: 1px solid rgba(147, 51, 234, 0.2);
 }
 
 .course-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(147, 51, 234, 0.3);
 }
 
 .course-image {
@@ -424,45 +486,35 @@ footer {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Allow content to fill available space */
+    flex-grow: 1;
+    background: rgba(10, 10, 15, 0.9);
 }
 
 .course-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: var(--accent-purple);
+    color: #fff;
     margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
 }
 
 .course-description {
-    color: var(--dark-text);
+    color: #e0e0ff;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    flex-grow: 1; /* Allow description to fill available space */
-    min-height: 100px;
+    flex-grow: 1;
 }
 
-.course-button {
-    display: inline-block;
-    background: linear-gradient(45deg, var(--gold), var(--light-gold));
-    color: var(--dark-text);
+.course-card .quantum-button {
+    align-self: center;
     padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.2);
-    align-self: center; /* Center the button horizontally */
-    margin-top: auto; /* Push button to bottom */
+    font-size: 1rem;
+    margin-top: auto;
+    width: auto;
+    min-width: 200px;
 }
 
-.course-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-}
-
-/* Responsive adjustments for courses */
 @media (max-width: 768px) {
     .courses-grid {
         grid-template-columns: 1fr;
@@ -472,28 +524,29 @@ footer {
     .course-title {
         font-size: 1.5rem;
     }
-
-    .course-description {
-        min-height: auto;
-    }
 }
 
 /* Add these new styles for the workshop page */
 .workshop-details {
     text-align: center;
     margin: 2rem 0;
-    color: var(--accent-purple);
+    color: #a855f7;
+    background: rgba(147, 51, 234, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(147, 51, 234, 0.2);
 }
 
 .workshop-details .date-time {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-family: 'Cormorant Garamond', serif;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
 }
 
 .workshop-details .time-zone {
     font-size: 1.2rem;
-    opacity: 0.9;
+    color: #e0e0ff;
 }
 
 #countdown {
@@ -504,21 +557,24 @@ footer {
 }
 
 #countdown .time-segment {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 1rem;
+    background: rgba(147, 51, 234, 0.1);
+    padding: 1.5rem;
     border-radius: 10px;
-    min-width: 100px;
+    min-width: 120px;
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.2);
 }
 
 #countdown .time-segment span {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--accent-purple);
+    color: #a855f7;
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
 }
 
 #countdown .time-segment .label {
     font-size: 0.9rem;
-    color: var(--dark-text);
+    color: #e0e0ff;
     opacity: 0.8;
 }
 

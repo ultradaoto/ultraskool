@@ -22,7 +22,7 @@ function startCountdown() {
 
         if (timeLeft <= 0) {
             clearInterval(countdownTimer);
-            window.location.href = 'https://www.skool.com/vagus';
+            window.location.href = 'https://www.skool.com/ultra';
         }
         timeLeft--;
     }, 1000);
@@ -31,6 +31,6 @@ function startCountdown() {
 // Button click handler
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('cta-button').addEventListener('click', () => {
-        window.location.href = 'https://www.skool.com/vagus';
+        window.location.href = 'https://www.skool.com/ultra';
     });
 }); 
