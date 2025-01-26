@@ -476,4 +476,71 @@ footer {
     .course-description {
         min-height: auto;
     }
+}
+
+/* Add these new styles for the workshop page */
+.workshop-details {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--accent-purple);
+}
+
+.workshop-details .date-time {
+    font-size: 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 0.5rem;
+}
+
+.workshop-details .time-zone {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+#countdown .time-segment {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+#countdown .time-segment span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-purple);
+}
+
+#countdown .time-segment .label {
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .workshop-details .date-time {
+        font-size: 1.5rem;
+    }
+    
+    .workshop-details .time-zone {
+        font-size: 1rem;
+    }
+    
+    #countdown {
+        gap: 1rem;
+    }
+    
+    #countdown .time-segment {
+        min-width: 70px;
+        padding: 0.8rem;
+    }
+    
+    #countdown .time-segment span {
+        font-size: 1.8rem;
+    }
 } 

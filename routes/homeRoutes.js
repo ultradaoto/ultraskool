@@ -11,15 +11,39 @@ router.get('/', (req, res) => {
 });
 
 router.get('/about', (req, res) => {
-    res.render('about');
+    res.render('about', {
+        title: "About Vagus Skool - Our Mission & Vision",
+        description: "Learn how Vagus Skool is revolutionizing vagus nerve stimulation through accessible, clear, and effective methods. Join our community of practitioners and discover the healing power of VNS.",
+        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
+        currentUrl: "https://vagusskool.com/about"
+    });
 });
 
 router.get('/testimonials', (req, res) => {
-    res.render('testimonials');
+    res.render('testimonials', {
+        title: "Vagus Skool Success Stories - Transformative Experiences",
+        description: "Read and watch real testimonials from people who have transformed their lives through Vagus Skool's revolutionary vagus nerve stimulation techniques and breathing practices.",
+        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
+        currentUrl: "https://vagusskool.com/testimonials"
+    });
 });
 
 router.get('/courses', (req, res) => {
-    res.render('courses');
+    res.render('courses', {
+        title: "Vagus Skool Courses - Comprehensive VNS Learning Paths",
+        description: "Explore our comprehensive course catalog covering everything from basic vagus nerve stimulation to advanced techniques in breathing, ultrasound therapy, and electrical stimulation.",
+        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
+        currentUrl: "https://vagusskool.com/courses"
+    });
+});
+
+router.get('/join', (req, res) => {
+    res.render('join', {
+        title: "Vagus Nerve Live Workshop - Join Us Live!",
+        description: "Join the Vagus Skool for our First Ever Live Vagus Nerve Stimulation Workshop. Experience live guidance and community practice in our interactive Zoom session.",
+        imageUrl: "https://vagusskool.com/images/preview-image.jpg",
+        currentUrl: "https://vagusskool.com/join"
+    });
 });
 
 module.exports = router; 
