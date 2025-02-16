@@ -16,8 +16,8 @@
             </section>
 
             <div class="workshop-details">
-                <p class="date-time">Saturday, February 15th, 2025</p>
-                <p class="time-zone">11:00 AM - 1:30 PM Pacific Time (Los Angeles)</p>
+                <p class="date-time">Saturday, April 19th, 2025</p>
+                <p class="time-zone">11:00 AM PST / 2:00 PM EST</p>
             </div>
 
             <div class="countdown-container">
@@ -53,8 +53,8 @@
     <%- include('partials/footer') %>
 
     <script>
-        // Set the date we're counting down to (February 15th, 2025 at 11:00 AM PT)
-        const workshopDate = new Date('2025-02-15T11:00:00-08:00').getTime();
+        // Set the date we're counting down to (April 19th, 2025 at 11:00 AM PST)
+        const workshopDate = new Date('2025-04-19T11:00:00-07:00').getTime();
 
         // Update the countdown every second
         const countdownTimer = setInterval(function() {
@@ -76,13 +76,13 @@
             // If the countdown is finished, redirect to Zoom
             if (distance < 0) {
                 clearInterval(countdownTimer);
-                window.location.href = 'https://us06web.zoom.us/j/3351790143?omn=84736320786';
+                window.location.href = 'https://us06web.zoom.us/s/83733122919';
             }
         }, 1000);
 
         // Zoom button click handler
         document.getElementById('zoom-button').addEventListener('click', () => {
-            window.location.href = 'https://us06web.zoom.us/j/3351790143?omn=84736320786';
+            window.location.href = 'https://us06web.zoom.us/s/83733122919';
         });
     </script>
 </body>
