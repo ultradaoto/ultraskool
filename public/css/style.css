@@ -662,4 +662,31 @@ footer {
     .hero-header .subtitle {
         font-size: 1rem;
     }
+}
+
+.disclaimer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(147, 51, 234, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(147, 51, 234, 0.1);
+}
+
+.disclaimer p {
+    color: #a855f7;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .disclaimer {
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+    
+    .disclaimer p {
+        font-size: 0.8rem;
+    }
 } 
