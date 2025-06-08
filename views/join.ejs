@@ -16,11 +16,11 @@
             </section>
 
             <div class="workshop-details">
-                <p class="date-time">Saturday, April 12th, 2025</p>
-                <p class="time-zone">11:00 AM PST / 2:00 PM EST</p>
+                <p class="date-time">Saturday, June 14th, 2025</p>
+                <p class="time-zone">11:00 AM - 1:00 PM PST</p>
             </div>
 
-            <div class="countdown-container">
+            <div id="countdown-section" class="countdown-container">
                 <p>Quantum Session Begins In:</p>
                 <div id="countdown">
                     <div class="time-segment">
@@ -42,7 +42,12 @@
                 </div>
             </div>
 
-            <div class="cta-container">
+            <div id="thank-you-section" class="thank-you-container" style="display: none;">
+                <p class="thank-you-message">Thanks for Coming!</p>
+                <p class="next-event-message">Be sure to check the calendar on <a href="https://skool.com/ultra" class="quantum-link" target="_blank">Skool.com/ultra</a> to see our next event time!</p>
+            </div>
+
+            <div id="cta-section" class="cta-container">
                 <button id="zoom-button" class="quantum-button">
                     Enter the Quantum Session
                 </button>
@@ -53,37 +58,62 @@
     <%- include('partials/footer') %>
 
     <script>
-        // Set the date we're counting down to (April 12th, 2025 at 11:00 AM PST)
-        const workshopDate = new Date('2025-04-12T11:00:00-07:00').getTime();
+        // Set the workshop start and end times (June 14th, 2025)
+        const workshopStartDate = new Date('2025-06-14T11:00:00-07:00').getTime();
+        const workshopEndDate = new Date('2025-06-14T14:00:00-07:00').getTime(); // 2:00 PM PST
+
+        // Get DOM elements
+        const countdownSection = document.getElementById('countdown-section');
+        const thankYouSection = document.getElementById('thank-you-section');
+        const ctaSection = document.getElementById('cta-section');
 
         // Update the countdown every second
         const countdownTimer = setInterval(function() {
             const now = new Date().getTime();
-            const distance = workshopDate - now;
+            const distanceToStart = workshopStartDate - now;
+            const distanceToEnd = workshopEndDate - now;
 
-            // Time calculations
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Check if event has ended (after 2pm PST)
+            if (distanceToEnd < 0) {
+                clearInterval(countdownTimer);
+                countdownSection.style.display = 'none';
+                ctaSection.style.display = 'none';
+                thankYouSection.style.display = 'block';
+                return;
+            }
+
+            // If the countdown to start is finished, redirect to Zoom
+            if (distanceToStart < 0 && distanceToEnd > 0) {
+                clearInterval(countdownTimer);
+                window.location.href = 'https://us06web.zoom.us/j/82358635528';
+                return;
+            }
+
+            // Time calculations for countdown to start
+            const days = Math.floor(distanceToStart / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distanceToStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distanceToStart % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distanceToStart % (1000 * 60)) / 1000);
 
             // Display the result
             document.getElementById('days').textContent = String(days).padStart(2, '0');
             document.getElementById('hours').textContent = String(hours).padStart(2, '0');
             document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
             document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-            // If the countdown is finished, redirect to Zoom
-            if (distance < 0) {
-                clearInterval(countdownTimer);
-                window.location.href = 'https://us06web.zoom.us/j/88321094456';
-            }
         }, 1000);
 
         // Zoom button click handler
         document.getElementById('zoom-button').addEventListener('click', () => {
-            window.location.href = 'https://us06web.zoom.us/j/88321094456';
+            window.location.href = 'https://us06web.zoom.us/j/82358635528';
         });
+
+        // Initial check on page load
+        const now = new Date().getTime();
+        if (workshopEndDate - now < 0) {
+            countdownSection.style.display = 'none';
+            ctaSection.style.display = 'none';
+            thankYouSection.style.display = 'block';
+        }
     </script>
 </body>
 </html>
