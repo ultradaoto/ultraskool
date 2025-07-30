@@ -5,17 +5,17 @@
     <main>
         <div class="container">
             <header class="hero-header">
-                <h1 class="title">July Ultra Meeting!</h1>
+                <h1 class="title">August Skool Ultrasound Meetup</h1>
                 <p class="subtitle">Advanced Consciousness Engineering Live Session</p>
             </header>
 
             <section class="description">
-                <p>Join us for a July 2025 Excellent Adventure! We will be having fun performing Ultrasound Stimulation of the Vagus Nerve and the Cerebral Regions of the Brain - together! Come and learn how, ask questions, and of course, bring your Fave VNS tools with ya. See you soon!</p>
+                <p>Join us for our August Skool Ultrasound Meetup! We will be exploring advanced ultrasound stimulation techniques together. Come and learn, ask questions, and bring your favorite VNS tools with you. See you there!</p>
             </section>
 
             <div class="workshop-details">
-                <p class="date-time">Saturday, July 12th, 2025</p>
-                <p class="time-zone">11:00 AM - 1:00 PM PST (Los Angeles time)</p>
+                <p class="date-time">Saturday, August 2nd, 2025</p>
+                <p class="time-zone">11:00 AM - 1:00 PM Pacific Time (US and Canada)</p>
             </div>
 
             <div id="countdown-section" class="countdown-container">
@@ -41,8 +41,8 @@
             </div>
 
             <div id="thank-you-section" class="thank-you-container" style="display: none;">
-                <p class="thank-you-message">Thanks for Coming!</p>
-                <p class="next-event-message">Be sure to check the calendar on <a href="https://skool.com/ultra" class="quantum-link" target="_blank">Skool.com/ultra</a> to see our next event time!</p>
+                <p class="thank-you-message">This event is over!</p>
+                <p class="next-event-message">Please check back in our <a href="https://skool.com/ultra" class="quantum-link" target="_blank">Calendar</a> for the next one!</p>
             </div>
 
             <div id="cta-section" class="cta-container">
@@ -56,9 +56,9 @@
     <%- include('partials/footer') %>
 
     <script>
-        // Set the workshop start and end times (July 12th, 2025)
-        const workshopStartDate = new Date('2025-07-12T11:00:00-07:00').getTime();
-        const workshopEndDate = new Date('2025-07-12T14:00:00-07:00').getTime(); // 2:00 PM PST
+        // Set the workshop start and end times (August 2nd, 2025)
+        const workshopStartDate = new Date('2025-08-02T11:00:00-07:00').getTime();
+        const workshopEndDate = new Date('2025-08-02T13:00:00-07:00').getTime(); // 1:00 PM PST (2 hours)
 
         // Get DOM elements
         const countdownSection = document.getElementById('countdown-section');
@@ -71,7 +71,7 @@
             const distanceToStart = workshopStartDate - now;
             const distanceToEnd = workshopEndDate - now;
 
-            // Check if event has ended (after 2pm PST)
+            // Check if event has ended (after 1pm PST)
             if (distanceToEnd < 0) {
                 clearInterval(countdownTimer);
                 countdownSection.style.display = 'none';
@@ -83,7 +83,7 @@
             // If the countdown to start is finished, redirect to Zoom
             if (distanceToStart < 0 && distanceToEnd > 0) {
                 clearInterval(countdownTimer);
-                window.location.href = 'https://us06web.zoom.us/j/85473956656';
+                window.location.href = 'https://us06web.zoom.us/j/81434660118';
                 return;
             }
 
@@ -102,7 +102,7 @@
 
         // Zoom button click handler
         document.getElementById('zoom-button').addEventListener('click', () => {
-            window.location.href = 'https://us06web.zoom.us/j/85473956656';
+            window.location.href = 'https://us06web.zoom.us/j/81434660118';
         });
 
         // Initial check on page load
