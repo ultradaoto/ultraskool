@@ -1,117 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/header') %>
-<body>
-    <main>
-        <div class="container">
-            <header class="hero-header">
-                <h1 class="title">August Skool Ultrasound Meetup</h1>
-                <p class="subtitle">Advanced Consciousness Engineering Live Session</p>
+<body class="bg-ultra-dark text-[#e0e0ff] font-montserrat min-h-screen">
+    <main class="pt-8">
+        <div class="container-custom">
+            <header class="text-center mb-12">
+                <h1 class="title">Live Quantum Workshops</h1>
+                <p class="subtitle">Experience Advanced Consciousness Engineering Live</p>
             </header>
 
-            <section class="description">
-                <p>Join us for our August Skool Ultrasound Meetup! We will be exploring advanced ultrasound stimulation techniques together. Come and learn, ask questions, and bring your favorite VNS tools with you. See you there!</p>
+            <section class="bg-purple-900/10 rounded-2xl p-8 my-8 border border-purple-900/20 max-w-[800px] mx-auto text-center">
+                <p class="text-xl mb-6 leading-relaxed">We hold regular, high-impact live workshops where we explore advanced ultrasound stimulation techniques, quantum biology, and consciousness expansion together.</p>
+                <p class="text-lg leading-relaxed text-purple-300">Join our community of pioneers to learn, ask questions, and practice with advanced VNS tools in real-time.</p>
             </section>
 
-            <div class="workshop-details">
-                <p class="date-time">Saturday, August 2nd, 2025</p>
-                <p class="time-zone">11:00 AM - 1:00 PM Pacific Time (US and Canada)</p>
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px] mx-auto my-12">
+                <div class="bg-purple-900/5 rounded-2xl p-8 border border-purple-900/20 text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-cormorant text-3xl text-white mb-4 [text-shadow:0_0_10px_rgba(147,51,234,0.3)]">Upcoming Events</h3>
+                        <p class="text-[#e0e0ff] mb-8 opacity-90">View our full schedule of live sessions, guest lectures, and collective practice events.</p>
+                    </div>
+                    <a href="https://skool.com/ultra/calendar" target="_blank" class="quantum-button !px-6 !py-3 !text-lg">
+                        View Workshop Calendar
+                    </a>
+                </div>
 
-            <div id="countdown-section" class="countdown-container">
-                <p>Quantum Session Begins In:</p>
-                <div id="countdown">
-                    <div class="time-segment">
-                        <span id="days">00</span>
-                        <span class="label">Days</span>
+                <div class="bg-gradient-to-br from-purple-900/20 to-violet-900/20 rounded-2xl p-8 border border-purple-500/30 text-center flex flex-col justify-between shadow-[0_0_30px_rgba(147,51,234,0.1)]">
+                    <div>
+                        <h3 class="font-cormorant text-3xl text-white mb-4 [text-shadow:0_0_10px_rgba(147,51,234,0.3)]">7-Day Free Trial</h3>
+                        <p class="text-[#e0e0ff] mb-8 opacity-90">Get full access to the Ultra Skool modules, community, and live recordings for 7 days—completely free.</p>
                     </div>
-                    <div class="time-segment">
-                        <span id="hours">00</span>
-                        <span class="label">Hours</span>
-                    </div>
-                    <div class="time-segment">
-                        <span id="minutes">00</span>
-                        <span class="label">Minutes</span>
-                    </div>
-                    <div class="time-segment">
-                        <span id="seconds">00</span>
-                        <span class="label">Seconds</span>
-                    </div>
+                    <a href="https://skool.com/ultra" target="_blank" class="bg-white text-violet-900 font-bold px-6 py-3 rounded-lg text-lg hover:bg-purple-100 transition-all duration-300 shadow-xl">
+                        Start Free Trial
+                    </a>
                 </div>
             </div>
 
-            <div id="thank-you-section" class="thank-you-container" style="display: none;">
-                <p class="thank-you-message">This event is over!</p>
-                <p class="next-event-message">Please check back in our <a href="https://skool.com/ultra" class="quantum-link" target="_blank">Calendar</a> for the next one!</p>
-            </div>
-
-            <div id="cta-section" class="cta-container">
-                <button id="zoom-button" class="quantum-button">
-                    Enter the Quantum Session
-                </button>
-                <p class="quantum-note">Prepare your ultrasound tools for consciousness exploration</p>
+            <div class="text-center space-y-4 my-16">
+                <p class="text-purple-500 italic text-lg">Don't miss our next live transmission.</p>
+                <p class="text-accent-purple text-sm opacity-80">Experience the synergy of collective consciousness engineering.</p>
             </div>
         </div>
     </main>
     <%- include('partials/footer') %>
-
-    <script>
-        // Set the workshop start and end times (August 2nd, 2025)
-        const workshopStartDate = new Date('2025-08-02T11:00:00-07:00').getTime();
-        const workshopEndDate = new Date('2025-08-02T13:00:00-07:00').getTime(); // 1:00 PM PST (2 hours)
-
-        // Get DOM elements
-        const countdownSection = document.getElementById('countdown-section');
-        const thankYouSection = document.getElementById('thank-you-section');
-        const ctaSection = document.getElementById('cta-section');
-
-        // Update the countdown every second
-        const countdownTimer = setInterval(function() {
-            const now = new Date().getTime();
-            const distanceToStart = workshopStartDate - now;
-            const distanceToEnd = workshopEndDate - now;
-
-            // Check if event has ended (after 1pm PST)
-            if (distanceToEnd < 0) {
-                clearInterval(countdownTimer);
-                countdownSection.style.display = 'none';
-                ctaSection.style.display = 'none';
-                thankYouSection.style.display = 'block';
-                return;
-            }
-
-            // If the countdown to start is finished, redirect to Zoom
-            if (distanceToStart < 0 && distanceToEnd > 0) {
-                clearInterval(countdownTimer);
-                window.location.href = 'https://us06web.zoom.us/j/81434660118';
-                return;
-            }
-
-            // Time calculations for countdown to start
-            const days = Math.floor(distanceToStart / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distanceToStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distanceToStart % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distanceToStart % (1000 * 60)) / 1000);
-
-            // Display the result
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        }, 1000);
-
-        // Zoom button click handler
-        document.getElementById('zoom-button').addEventListener('click', () => {
-            window.location.href = 'https://us06web.zoom.us/j/81434660118';
-        });
-
-        // Initial check on page load
-        const now = new Date().getTime();
-        if (workshopEndDate - now < 0) {
-            countdownSection.style.display = 'none';
-            ctaSection.style.display = 'none';
-            thankYouSection.style.display = 'block';
-        }
-    </script>
 </body>
 </html>

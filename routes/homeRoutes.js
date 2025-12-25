@@ -44,8 +44,8 @@ router.get('/courses', (req, res) => {
 
 router.get('/join', (req, res) => {
     res.render('join', {
-        title: "Ultra Microtubule Workshop - Join Us Live!",
-        description: "Join the Ultra Skool for Live Ultrasound Stimulation Workshop. Experience live guidance and community practice in our interactive Zoom session.",
+        title: "Live Quantum Workshops & 7-Day Free Trial | Ultra Skool",
+        description: "Join Ultra Skool for live advanced consciousness engineering workshops. Explore our workshop calendar and start your 7-day free trial today.",
         imageUrl: "https://ultraskool.com/images/preview-image.jpg",
         currentUrl: "https://ultraskool.com/join"
     });
