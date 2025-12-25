@@ -11,14 +11,19 @@ function showComingSoon() {
 
 // Countdown Timer
 function startCountdown() {
+    const minutesDisplay = document.getElementById('minutes');
+    const secondsDisplay = document.getElementById('seconds');
+    
+    if (!minutesDisplay || !secondsDisplay) return;
+
     let timeLeft = 5 * 60; // 5 minutes in seconds
 
     const countdownTimer = setInterval(() => {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
 
-        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        minutesDisplay.textContent = String(minutes).padStart(2, '0');
+        secondsDisplay.textContent = String(seconds).padStart(2, '0');
 
         if (timeLeft <= 0) {
             clearInterval(countdownTimer);
@@ -30,7 +35,10 @@ function startCountdown() {
 
 // Button click handler
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('cta-button').addEventListener('click', () => {
-        window.location.href = 'https://www.skool.com/ultra';
-    });
+    const ctaButton = document.getElementById('cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', () => {
+            window.location.href = 'https://www.skool.com/ultra';
+        });
+    }
 }); 
