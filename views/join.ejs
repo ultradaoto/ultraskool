@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/header') %>
-<body class="bg-ultra-dark text-[#e0e0ff] font-montserrat min-h-screen">
-    <main class="pt-8">
+<%- include('partials/head', { title: 'Ultra Skool Workshop', description: 'Join live Ultra Skool workshops, calendar access, and community sessions.' }) %>
+<body>
+    <%- include('partials/header') %>
+    <main class="main-page">
         <div class="container-custom">
-            <header class="text-center mb-12">
-                <h1 class="title">Live Quantum Workshops</h1>
-                <p class="subtitle">Experience Advanced Consciousness Engineering Live</p>
-            </header>
+            <section class="hero-shell">
+                <div class="page-orb left-[-4rem] top-12 h-44 w-44 bg-purple-500/16"></div>
+                <div class="page-orb bottom-[-5rem] right-[-2rem] h-56 w-56 bg-fuchsia-500/12"></div>
 
-            <section class="bg-purple-900/10 rounded-2xl p-8 my-8 border border-purple-900/20 max-w-[800px] mx-auto text-center">
-                <p class="text-xl mb-6 leading-relaxed">We hold regular, high-impact live workshops where we explore advanced ultrasound stimulation techniques, quantum biology, and consciousness expansion together.</p>
-                <p class="text-lg leading-relaxed text-purple-300">Join our community of pioneers to learn, ask questions, and practice with advanced VNS tools in real-time.</p>
+                <div class="relative z-10 text-center">
+                    <span class="style-kicker mb-6">Live Access</span>
+                    <h1 class="title mb-4">Live Quantum Workshops</h1>
+                    <p class="subtitle">Experience Advanced Consciousness Engineering Live</p>
+                    <p class="mx-auto mt-6 max-w-3xl text-lg text-[#e0e0ff]/84 md:text-xl">
+                        We hold regular, high-impact live workshops where we explore advanced ultrasound stimulation techniques, quantum biology, and consciousness expansion together.
+                    </p>
+                    <p class="mx-auto mt-4 max-w-2xl text-lg text-purple-300/90">Join our community of pioneers to learn, ask questions, and practice with advanced VNS tools in real-time.</p>
+                </div>
             </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px] mx-auto my-12">
-                <div class="bg-purple-900/5 rounded-2xl p-8 border border-purple-900/20 text-center flex flex-col justify-between">
+            <section class="mx-auto mt-8 grid max-w-[960px] gap-6 md:grid-cols-2">
+                <div class="section-shell flex flex-col justify-between text-center">
                     <div>
-                        <h3 class="font-cormorant text-3xl text-white mb-4 [text-shadow:0_0_10px_rgba(147,51,234,0.3)]">Upcoming Events</h3>
-                        <p class="text-[#e0e0ff] mb-8 opacity-90">View our full schedule of live sessions, guest lectures, and collective practice events.</p>
+                        <p class="section-label">Calendar</p>
+                        <h3 class="mt-4 font-cormorant text-3xl text-white">Upcoming Events</h3>
+                        <p class="mt-4 text-[#e0e0ff]/82">View our full schedule of live sessions, guest lectures, and collective practice events.</p>
                     </div>
-                    <a href="https://skool.com/ultra/calendar" target="_blank" class="quantum-button !px-6 !py-3 !text-lg">
+                    <a href="https://skool.com/ultra/calendar" target="_blank" class="quantum-button mt-8 !px-6 !py-3 !text-lg">
                         View Workshop Calendar
                     </a>
                 </div>
 
-                <div class="bg-gradient-to-br from-purple-900/20 to-violet-900/20 rounded-2xl p-8 border border-purple-500/30 text-center flex flex-col justify-between shadow-[0_0_30px_rgba(147,51,234,0.1)]">
+                <div class="section-shell flex flex-col justify-between text-center">
                     <div>
-                        <h3 class="font-cormorant text-3xl text-white mb-4 [text-shadow:0_0_10px_rgba(147,51,234,0.3)]">7-Day Free Trial</h3>
-                        <p class="text-[#e0e0ff] mb-8 opacity-90">Get full access to the Ultra Skool modules, community, and live recordings for 7 days—completely free.</p>
+                        <p class="section-label">Trial access</p>
+                        <h3 class="mt-4 font-cormorant text-3xl text-white">7-Day Free Trial</h3>
+                        <p class="mt-4 text-[#e0e0ff]/82">Get full access to the Ultra Skool modules, community, and live recordings for 7 days - completely free.</p>
                     </div>
-                    <a href="https://skool.com/ultra" target="_blank" class="bg-white text-violet-900 font-bold px-6 py-3 rounded-lg text-lg hover:bg-purple-100 transition-all duration-300 shadow-xl">
+                    <a href="https://skool.com/ultra" target="_blank" class="quantum-button mt-8 !px-6 !py-3 !text-lg">
                         Start Free Trial
                     </a>
                 </div>
-            </div>
+            </section>
 
-            <div class="text-center space-y-4 my-16">
-                <p class="text-purple-500 italic text-lg">Don't miss our next live transmission.</p>
-                <p class="text-accent-purple text-sm opacity-80">Experience the synergy of collective consciousness engineering.</p>
+            <div class="mt-14 text-center space-y-4">
+                <p class="text-lg italic text-purple-300/88">Don't miss our next live transmission.</p>
+                <p class="text-sm text-[#d4cdf8]/72">Experience the synergy of collective consciousness engineering.</p>
             </div>
         </div>
     </main>

@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header') %>
+<%- include('../partials/head', { title: typeof currentTag !== 'undefined' ? `Blog: ${currentTag}` : 'Ultra Skool Blog', description: 'Ultra Skool writing on consciousness engineering, protocols, and research.' }) %>
 <body>
     <%- include('../partials/header') %>
-    <main>
+    <main class="main-page">
         <div class="container-custom py-8 md:py-16">
-            <header class="text-center mb-12 md:mb-16">
-                <h1 class="title font-cormorant text-5xl md:text-6xl text-accent-purple mb-4 font-medium">
+            <section class="hero-shell mb-12 md:mb-16 text-center">
+                <span class="style-kicker mb-6">Ultra Skool Blog</span>
+                <h1 class="title mb-4">
                     <%= typeof currentTag !== 'undefined' ? `Posts tagged "${currentTag}"` : 'Blog' %>
                 </h1>
-                <p class="subtitle font-cormorant text-xl md:text-2xl text-gold leading-tight max-w-2xl mx-auto">
+                <p class="mx-auto max-w-2xl text-lg text-[#e0e0ff]/80 md:text-xl">
                     <%= typeof currentTag !== 'undefined' ? 'Browse articles in this category' : 'Insights on ultra breath, microtubules, consciousness engineering, and quantum biology' %>
                 </p>
-            </header>
+            </section>
 
             <% if (tags && tags.length > 0) { %>
             <div class="flex flex-wrap justify-center gap-2 mb-12">
-                <a href="/blog" class="px-4 py-2 rounded-full text-sm <%= typeof currentTag === 'undefined' ? 'bg-accent-purple text-white' : 'bg-gray-100 text-accent-purple hover:bg-gray-200' %> transition-colors">
+                <a href="/blog" class="px-4 py-2 rounded-full text-sm border transition-colors <%= typeof currentTag === 'undefined' ? 'border-purple-300/25 bg-purple-500/20 text-white' : 'border-white/10 bg-white/5 text-[#e0e0ff]/78 hover:bg-white/10' %>">
                     All
                 </a>
                 <% tags.forEach(tag => { %>
-                    <a href="/blog/tag/<%= tag %>" class="px-4 py-2 rounded-full text-sm <%= typeof currentTag !== 'undefined' && currentTag === tag ? 'bg-accent-purple text-white' : 'bg-gray-100 text-accent-purple hover:bg-gray-200' %> transition-colors">
+                    <a href="/blog/tag/<%= tag %>" class="px-4 py-2 rounded-full text-sm border transition-colors <%= typeof currentTag !== 'undefined' && currentTag === tag ? 'border-purple-300/25 bg-purple-500/20 text-white' : 'border-white/10 bg-white/5 text-[#e0e0ff]/78 hover:bg-white/10' %>">
                         <%= tag %>
                     </a>
                 <% }) %>
@@ -30,18 +31,18 @@
             <% if (posts && posts.length > 0) { %>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <% posts.forEach(post => { %>
-                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                            <div class="p-6 flex-1 flex flex-col">
+                        <article class="style-panel flex flex-col">
+                            <div class="flex-1 flex flex-col">
                                 <div class="flex flex-wrap gap-2 mb-3">
                                     <% post.tags.slice(0, 3).forEach(tag => { %>
-                                        <span class="text-xs px-2 py-1 bg-gold/20 text-accent-purple rounded-full"><%= tag %></span>
+                                        <span class="style-chip text-xs"><%= tag %></span>
                                     <% }) %>
                                 </div>
-                                <h2 class="font-cormorant text-2xl text-accent-purple mb-3 font-medium leading-tight">
-                                    <a href="/blog/<%= post.slug %>" class="hover:text-gold transition-colors"><%= post.title %></a>
+                                <h2 class="font-cormorant text-2xl text-white mb-3 font-medium leading-tight">
+                                    <a href="/blog/<%= post.slug %>" class="transition-colors hover:text-purple-300"><%= post.title %></a>
                                 </h2>
-                                <p class="text-gray-600 text-sm mb-4 flex-1"><%= post.excerpt %></p>
-                                <div class="flex items-center justify-between text-sm text-gray-500 border-t pt-4 mt-auto">
+                                <p class="mb-4 flex-1 text-sm text-[#e0e0ff]/72"><%= post.excerpt %></p>
+                                <div class="mt-auto flex items-center justify-between border-t border-white/8 pt-4 text-sm text-[#cfc6f8]/58">
                                     <span>By <%= post.author %></span>
                                     <span><%= new Date(post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></span>
                                 </div>
@@ -51,9 +52,9 @@
                 </div>
             <% } else { %>
                 <div class="text-center py-16">
-                    <p class="text-gray-500 text-lg">No posts found.</p>
+                    <p class="text-lg text-[#cfc6f8]/60">No posts found.</p>
                     <% if (typeof currentTag !== 'undefined') { %>
-                        <a href="/blog" class="inline-block mt-4 text-accent-purple hover:text-gold transition-colors">View all posts</a>
+                        <a href="/blog" class="inline-block mt-4 text-purple-300 transition-colors hover:text-white">View all posts</a>
                     <% } %>
                 </div>
             <% } %>

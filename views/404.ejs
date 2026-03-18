@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/header') %>
-<body class="bg-ultra-dark text-[#e0e0ff] font-montserrat min-h-screen">
-    <main class="pt-16">
+<%- include('partials/head', { title: '404 | Ultra Skool', description: 'Page not found.' }) %>
+<body>
+    <%- include('partials/header') %>
+    <main class="main-page pt-16">
         <div class="container-custom">
-            <header class="text-center mb-12">
-                <h1 class="title">404</h1>
-                <p class="subtitle">Quantum Anomaly Detected</p>
-            </header>
-
-            <section class="max-w-[600px] mx-auto bg-purple-900/10 p-12 rounded-2xl border border-purple-900/20 text-center space-y-8">
-                <p class="text-2xl font-cormorant text-purple-400 [text-shadow:0_0_10px_rgba(147,51,234,0.3)]">The consciousness pathway you're seeking doesn't exist in our quantum realm.</p>
-                <p class="text-lg text-[#e0e0ff] opacity-80">Perhaps you've ventured into a parallel universe? Let's get you back to our dimension.</p>
+            <section class="hero-shell mx-auto max-w-[700px] text-center">
+                <span class="style-kicker mb-6">404</span>
+                <h1 class="title">Quantum Anomaly Detected</h1>
+                <p class="mx-auto max-w-2xl text-2xl font-cormorant text-purple-300">The consciousness pathway you're seeking doesn't exist in our quantum realm.</p>
+                <p class="mx-auto mt-4 max-w-xl text-lg text-[#e0e0ff]/80">Perhaps you've ventured into a parallel universe? Let's get you back to our dimension.</p>
                 
                 <div class="pt-8">
                     <a href="/" class="quantum-button inline-block w-full md:w-auto">

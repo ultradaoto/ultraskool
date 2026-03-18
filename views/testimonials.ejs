@@ -1,70 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/header') %>
-<body class="bg-ultra-dark text-[#e0e0ff] font-montserrat min-h-screen">
-    <main class="pt-8">
+<%- include('partials/head', { title: 'Ultra Skool Testimonials', description: 'Watch and read community experiences from Ultra Skool members.' }) %>
+<body>
+    <%- include('partials/header') %>
+    <main class="main-page">
         <div class="container-custom">
-            <header class="text-center mb-12">
-                <h1 class="title">Quantum Transformations</h1>
-                <p class="subtitle">Pioneering Experiences from Our Community</p>
-            </header>
+            <section class="hero-shell mb-8">
+                <div class="page-orb left-[-4rem] top-12 h-44 w-44 bg-purple-500/16"></div>
+                <div class="page-orb bottom-[-5rem] right-[-2rem] h-56 w-56 bg-violet-500/12"></div>
+                <div class="relative z-10 text-center">
+                    <span class="style-kicker mb-6">Community Proof</span>
+                    <h1 class="title mb-4">Quantum Transformations</h1>
+                    <p class="subtitle">Pioneering Experiences from Our Community</p>
+                </div>
+            </section>
 
             <section class="mb-16">
-                <h2 class="font-cormorant text-3xl text-white text-center mb-12 [text-shadow:0_0_10px_rgba(147,51,234,0.3)]">Video Evidence*</h2>
+                <h2 class="mb-12 text-center font-cormorant text-3xl text-white">Video Evidence*</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-purple-900/20">
-                        <iframe 
-                            class="absolute top-0 left-0 w-full h-full"
-                            src="https://www.youtube.com/embed/RaZvAWhdVWw?si=hPrvMBwAs-mD1ytH" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                    <div class="video-shell">
+                        <div class="relative h-0 overflow-hidden rounded-[1.25rem] pb-[56.25%]">
+                            <iframe
+                                class="absolute left-0 top-0 h-full w-full"
+                                src="https://www.youtube.com/embed/RaZvAWhdVWw?si=hPrvMBwAs-mD1ytH"
+                                title="Community video testimonial 1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
-                    <div class="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-purple-900/20">
-                        <iframe 
-                            class="absolute top-0 left-0 w-full h-full"
-                            src="https://www.youtube.com/embed/hEmvAPp9g2M?si=yrzVfSpLADXHm6p5" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                    <div class="video-shell">
+                        <div class="relative h-0 overflow-hidden rounded-[1.25rem] pb-[56.25%]">
+                            <iframe
+                                class="absolute left-0 top-0 h-full w-full"
+                                src="https://www.youtube.com/embed/hEmvAPp9g2M?si=yrzVfSpLADXHm6p5"
+                                title="Community video testimonial 2"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
-                    <div class="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-purple-900/20">
-                        <iframe 
-                            class="absolute top-0 left-0 w-full h-full"
-                            src="https://www.youtube.com/embed/cXYU_Cu0SlA?si=RqiZBQF5Nle8CftN" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                    <div class="video-shell">
+                        <div class="relative h-0 overflow-hidden rounded-[1.25rem] pb-[56.25%]">
+                            <iframe
+                                class="absolute left-0 top-0 h-full w-full"
+                                src="https://www.youtube.com/embed/cXYU_Cu0SlA?si=RqiZBQF5Nle8CftN"
+                                title="Community video testimonial 3"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section class="mb-16">
-                <h2 class="font-cormorant text-3xl text-white text-center mb-12 [text-shadow:0_0_10px_rgba(147,51,234,0.3)]">Consciousness Pioneers</h2>
+                <h2 class="mb-12 text-center font-cormorant text-3xl text-white">Consciousness Pioneers</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-purple-900/10 p-8 rounded-2xl text-center border border-purple-900/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(147,51,234,0.2)]">
-                        <img src="/images/testimonial-avatar01.png" alt="Michael's avatar" class="w-24 h-24 rounded-full mx-auto mb-6 border-2 border-purple-500 shadow-[0_0_15px_rgba(147,51,234,0.3)]">
-                        <p class="text-[#e0e0ff] italic text-lg leading-relaxed mb-6">"The Ultra Breath protocol is revolutionary. In just minutes, I achieved states of consciousness that would typically take years of meditation. The quantum-level awareness I've accessed has completely transformed my understanding of reality and consciousness itself."</p>
-                        <p class="font-cormorant text-xl text-purple-400">- Michael</p>
+                    <div class="style-panel text-center">
+                        <img src="/images/testimonial-avatar01.png" alt="Michael's avatar" class="mx-auto mb-6 h-24 w-24 rounded-full border-2 border-purple-500/60 shadow-[0_0_20px_rgba(147,51,234,0.25)]">
+                        <p class="mb-6 text-lg italic leading-relaxed text-[#e0e0ff]/84">"The Ultra Breath protocol is revolutionary. In just minutes, I achieved states of consciousness that would typically take years of meditation. The quantum-level awareness I've accessed has completely transformed my understanding of reality and consciousness itself."</p>
+                        <p class="font-cormorant text-xl text-purple-300">- Michael</p>
                     </div>
-                    <div class="bg-purple-900/10 p-8 rounded-2xl text-center border border-purple-900/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(147,51,234,0.2)]">
-                        <img src="/images/testimonial-avatar02.png" alt="David's avatar" class="w-24 h-24 rounded-full mx-auto mb-6 border-2 border-purple-500 shadow-[0_0_15px_rgba(147,51,234,0.3)]">
-                        <p class="text-[#e0e0ff] italic text-lg leading-relaxed mb-6">"The pioneering work on Microtubule stimulation at Ultra Skool has given me my father back. After implementing the protocols, his cognitive function and memory have shown remarkable improvement. The intersection of quantum biology and consciousness is truly groundbreaking."</p>
-                        <p class="font-cormorant text-xl text-purple-400">- David</p>
+                    <div class="style-panel text-center">
+                        <img src="/images/testimonial-avatar02.png" alt="David's avatar" class="mx-auto mb-6 h-24 w-24 rounded-full border-2 border-purple-500/60 shadow-[0_0_20px_rgba(147,51,234,0.25)]">
+                        <p class="mb-6 text-lg italic leading-relaxed text-[#e0e0ff]/84">"The pioneering work on Microtubule stimulation at Ultra Skool has given me my father back. After implementing the protocols, his cognitive function and memory have shown remarkable improvement. The intersection of quantum biology and consciousness is truly groundbreaking."</p>
+                        <p class="font-cormorant text-xl text-purple-300">- David</p>
                     </div>
-                    <div class="bg-purple-900/10 p-8 rounded-2xl text-center border border-purple-900/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(147,51,234,0.2)]">
-                        <img src="/images/testimonial-avatar03.png" alt="James's avatar" class="w-24 h-24 rounded-full mx-auto mb-6 border-2 border-purple-500 shadow-[0_0_15px_rgba(147,51,234,0.3)]">
-                        <p class="text-[#e0e0ff] italic text-lg leading-relaxed mb-6">"The Xenon-enhanced protocols and advanced ultrasound techniques have opened doors I never knew existed. The depth of consciousness exploration possible through these methods is unprecedented. Ultra Skool is truly at the frontier of human potential."</p>
-                        <p class="font-cormorant text-xl text-purple-400">- James</p>
+                    <div class="style-panel text-center">
+                        <img src="/images/testimonial-avatar03.png" alt="James's avatar" class="mx-auto mb-6 h-24 w-24 rounded-full border-2 border-purple-500/60 shadow-[0_0_20px_rgba(147,51,234,0.25)]">
+                        <p class="mb-6 text-lg italic leading-relaxed text-[#e0e0ff]/84">"The Xenon-enhanced protocols and advanced ultrasound techniques have opened doors I never knew existed. The depth of consciousness exploration possible through these methods is unprecedented. Ultra Skool is truly at the frontier of human potential."</p>
+                        <p class="font-cormorant text-xl text-purple-300">- James</p>
                     </div>
                 </div>
             </section>
@@ -76,8 +88,8 @@
                 <p class="text-purple-500 italic text-sm">Join our community of consciousness pioneers</p>
             </div>
 
-            <div class="mt-12 p-6 bg-purple-900/5 rounded-xl border border-purple-900/10 max-w-[800px] mx-auto">
-                <p class="text-xs text-purple-500 italic text-center leading-relaxed">
+            <div class="section-shell mx-auto mt-12 max-w-[800px]">
+                <p class="text-center text-xs italic leading-relaxed text-purple-300/76">
                     * Disclaimer: These are real case studies provided from members of the Skool, but they have been obscured to protect the anonymity and privacy of members. The spoken testimonials shared have come from real experiences from the Ultra Skool.
                 </p>
             </div>

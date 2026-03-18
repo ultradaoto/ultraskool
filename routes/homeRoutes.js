@@ -51,14 +51,4 @@ router.get('/join', (req, res) => {
     });
 });
 
-// 404 page - This should be the last route
-router.use((req, res) => {
-    res.status(404).render('404', {
-        title: "404 - Page Not Found | Ultra Skool",
-        description: "The page you're looking for doesn't exist in our quantum realm.",
-        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
-        currentUrl: req.originalUrl
-    });
-});
-
 module.exports = router; 

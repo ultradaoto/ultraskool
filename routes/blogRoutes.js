@@ -1,52 +1,35 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const fs = require('fs');
-
-const postsFilePath = path.join(__dirname, '..', 'data', 'posts.json');
-
-// Helper function to read posts
-function getPosts() {
-    try {
-        const data = fs.readFileSync(postsFilePath, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error('Error reading posts:', error);
-        return [];
-    }
-}
+const { collectTags, readPosts } = require('../lib/posts');
 
 // GET /blog - List all published posts
 router.get('/blog', (req, res) => {
-    const posts = getPosts();
+    const posts = readPosts();
     const publishedPosts = posts
         .filter(post => post.published)
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    
-    // Get all unique tags
-    const allTags = [...new Set(posts.flatMap(post => post.tags))];
-    
+
     res.render('blog/index', {
         title: 'Blog - Ultra Skool',
         description: 'Explore articles on ultra breath, microtubules, consciousness engineering, and quantum biology.',
         imageUrl: 'https://ultraskool.com/images/preview-image.jpg',
         currentUrl: 'https://ultraskool.com/blog',
         posts: publishedPosts,
-        tags: allTags
+        tags: collectTags(posts)
     });
 });
 
 // GET /blog/:slug - Single post page
 router.get('/blog/:slug', (req, res) => {
-    const posts = getPosts();
+    const posts = readPosts();
     const post = posts.find(p => p.slug === req.params.slug && p.published);
     
     if (!post) {
-        return res.status(404).render('home', {
+        return res.status(404).render('404', {
             title: 'Post Not Found - Ultra Skool',
             description: 'The requested blog post could not be found.',
             imageUrl: 'https://ultraskool.com/images/preview-image.jpg',
-            currentUrl: 'https://ultraskool.com/blog'
+            currentUrl: `https://ultraskool.com/blog/${req.params.slug}`
         });
     }
     
@@ -67,23 +50,20 @@ router.get('/blog/:slug', (req, res) => {
 
 // GET /blog/tag/:tag - Filter posts by tag
 router.get('/blog/tag/:tag', (req, res) => {
-    const posts = getPosts();
+    const posts = readPosts();
     const tag = req.params.tag;
     
     const filteredPosts = posts
         .filter(post => post.published && post.tags.includes(tag))
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    
-    // Get all unique tags
-    const allTags = [...new Set(posts.flatMap(post => post.tags))];
-    
+
     res.render('blog/index', {
         title: `Posts tagged "${tag}" - Ultra Skool Blog`,
         description: `Browse all articles tagged with "${tag}" on ultra breath, microtubules, and consciousness engineering.`,
         imageUrl: 'https://ultraskool.com/images/preview-image.jpg',
         currentUrl: `https://ultraskool.com/blog/tag/${tag}`,
         posts: filteredPosts,
-        tags: allTags,
+        tags: collectTags(posts),
         currentTag: tag
     });
 });
