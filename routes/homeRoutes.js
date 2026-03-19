@@ -24,15 +24,6 @@ router.get('/about', (req, res) => {
     });
 });
 
-router.get('/testimonials', (req, res) => {
-    res.render('testimonials', {
-        title: "Ultra Skool Success Stories - Transformative Experiences",
-        description: "Read and watch real testimonials from people who have transformed their lives through Vagus Skool's revolutionary vagus nerve stimulation techniques and breathing practices.",
-        imageUrl: "https://ultraskool.com/images/preview-image.jpg",
-        currentUrl: "https://ultraskool.com/testimonials"
-    });
-});
-
 router.get('/courses', (req, res) => {
     res.render('courses', {
         title: "Ultra Skool Courses - Comprehensive Learning Paths",
