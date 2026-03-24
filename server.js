@@ -23,6 +23,21 @@ app.use('/', blogAdminRoutes);
 const blogApiRoutes = require('./routes/api/blogApi');
 app.use('/api/blog', blogApiRoutes);
 
+// Tracking proxy - bypasses Safari ITP by making tracking first-party
+app.post('/api/tracking/collect', async (req, res) => {
+    try {
+        const upstream = await fetch('https://email.sterlingcooley.com/api/tracking/collect', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(req.body),
+        });
+        const data = await upstream.json();
+        res.status(upstream.status).json(data);
+    } catch (err) {
+        res.json({ success: false });
+    }
+});
+
 app.use((req, res) => {
     res.status(404).render('404', {
         title: '404 - Page Not Found | Ultra Skool',
