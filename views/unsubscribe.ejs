@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Unsubscribe — Ultra Skool', description: 'Manage your email subscription status.' }) %>
+<body>
+    <%- include('partials/header') %>
+    <main class="main-page">
+        <div class="container-custom">
+            <section class="hero-shell text-center">
+                <div class="page-orb left-[-4rem] top-12 h-40 w-40 bg-purple-500/16"></div>
+                <div class="page-orb bottom-[-5rem] right-[-2rem] h-56 w-56 bg-violet-500/14"></div>
+
+                <div class="relative z-10 max-w-lg mx-auto py-12">
+                    <% if (success) { %>
+                        <div class="mb-6">
+                            <span class="inline-block text-5xl">✅</span>
+                        </div>
+                        <h1 class="title mb-5">You're Unsubscribed</h1>
+                        <p class="mt-4 text-xl text-[#e0e0ff]/84">
+                            Your email has been removed from the Ultra Skool mailing list. No more emails from us.
+                        </p>
+                        <p class="mt-4 text-base text-purple-300/60">
+                            Want back in later? You can always re-subscribe from our website.
+                        </p>
+                        <a href="https://ultraskool.com" class="quantum-button mt-8 inline-block">
+                            Back to Ultra Skool
+                        </a>
+                    <% } else { %>
+                        <div class="mb-6">
+                            <span class="inline-block text-5xl">⚠️</span>
+                        </div>
+                        <h1 class="title mb-5">Something Went Wrong</h1>
+                        <p class="mt-4 text-xl text-[#e0e0ff]/84">
+                            <%= error %>
+                        </p>
+                        <p class="mt-4 text-base text-purple-300/60">
+                            This link may have expired or already been used. Need help? <a href="mailto:support@ultraskool.com" class="text-purple-300 underline decoration-purple-400/35">Contact support</a>.
+                        </p>
+                        <a href="https://ultraskool.com" class="quantum-button mt-8 inline-block">
+                            Back to Ultra Skool
+                        </a>
+                    <% } %>
+                </div>
+            </section>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
