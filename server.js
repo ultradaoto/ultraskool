@@ -26,7 +26,7 @@ app.use('/api/blog', blogApiRoutes);
 // Tracking proxy - bypasses Safari ITP by making tracking first-party
 app.post('/api/tracking/collect', async (req, res) => {
     try {
-        const upstream = await fetch('https://email.sterlingcooley.com/api/tracking/collect', {
+        const upstream = await fetch('https://ulxcore.com/api/tracking/collect', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(req.body),
